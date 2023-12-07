@@ -1,30 +1,25 @@
-import React, { useEffect, useState } from "react";
-import PokeCard from "./components/pokeCard";
+import { useEffect, useState } from "react";
+import PokeCards from "./components/cards";
 import { Pokemon } from "./pokeInterface";
 import { getRandomPokemon } from "./getPokemon";
 
 function App() {
-  // const [pokemons, setPokemons] = useState<Pokemon[]>([]);
-  const [pokemon, setPokemon] = useState<Pokemon | undefined>();
+  const [pokemons, setPokemons] = useState<Pokemon[]>([]);
 
   useEffect(() => {
-    getRandomPokemon().then((newPokemon) => {
-      setPokemon(newPokemon);
-    });
-  }, []);
+    const fetchRandomPokemons = async () => {
+      for (let i = 0; i < 6; i++) {
+        const newPokemon = await getRandomPokemon();
+        setPokemons((prevPokemons) => [...prevPokemons, newPokemon]);
+      }
+    };
 
-  const handlePokemonChange = () => {
-    getRandomPokemon().then((newPokemon) => {
-      setPokemon(newPokemon);
-    });
-  };
+    fetchRandomPokemons();
+  }, []);
 
   return (
     <>
-      {pokemon && (
-        <PokeCard name={pokemon.name} image={pokemon.image}></PokeCard>
-      )}
-      <button onClick={handlePokemonChange}>CHANGE POKEMON</button>
+      <PokeCards pokemons={pokemons}></PokeCards>
     </>
   );
 }

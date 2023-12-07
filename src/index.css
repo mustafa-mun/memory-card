@@ -1,0 +1,41 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+}
+
+.poke-cards {
+  display: grid;
+  gap: 30px;
+  margin-top: 100px;
+}
+
+.easy {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.normal {
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.poke-card {
+  display: flex;
+  width: 6vw;
+  flex-direction: column;
+  align-items: center;
+  border: black 2px solid;
+  border-radius: 10px;
+  padding: 5px 20px;
+  cursor: pointer;
+}
+
+.poke-card img {
+  width: 100%;
+}
+
+.poke-card p {
+  font-weight: bold;
+  font-size: 18px;
+}
