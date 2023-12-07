@@ -6,20 +6,23 @@ body {
   margin: 0;
 }
 
+h1 {
+  margin-bottom: 100px;
+}
+
 .poke-cards {
   display: grid;
   gap: 30px;
-  margin-top: 100px;
 }
 
 .easy {
   grid-template-columns: 1fr 1fr 1fr;
 }
 
-.normal {
+.normal,
+.hard {
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
 }
-
 .poke-card {
   display: flex;
   width: 6vw;
@@ -38,4 +41,21 @@ body {
 .poke-card p {
   font-weight: bold;
   font-size: 17px;
+}
+
+.difficulty-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.difficulty-form button {
+  border: none;
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+  border-radius: 9px;
+  cursor: pointer;
+  background-color: black;
+  padding: 10px 15px;
 }

@@ -9,11 +9,28 @@ interface PokeCardsProps {
   setScore: React.Dispatch<React.SetStateAction<number>>;
   setPokemons: React.Dispatch<React.SetStateAction<Pokemon[]>>;
   seen: Record<string, boolean>;
+  difficulty: string;
 }
 // Render pokemons on the pokemons array
 const PokeCards = (props: PokeCardsProps) => {
+  let className = "poke-cards ";
+
+  switch (props.difficulty) {
+    case "easy":
+      className += "easy";
+      break;
+    case "normal":
+      className += "normal";
+      break;
+    case "hard":
+      className += "hard";
+      break;
+    default:
+      break;
+  }
+
   return (
-    <div className="poke-cards normal">
+    <div className={className}>
       {props.pokemons.map((poke) => (
         <PokeCard
           key={poke.id}
