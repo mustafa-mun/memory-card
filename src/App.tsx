@@ -27,10 +27,12 @@ function App() {
     }
 
     const fetchRandomPokemons = async () => {
+      const newPokemons = [];
       for (let i = 0; i < loopNumber; i++) {
         const newPokemon = await getRandomPokemon();
-        setPokemons((prevPokemons) => [...prevPokemons, newPokemon]);
+        newPokemons.push(newPokemon);
       }
+      setPokemons(newPokemons);
     };
 
     fetchRandomPokemons();
