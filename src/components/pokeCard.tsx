@@ -25,7 +25,9 @@ const PokeCard = (props: PokeProps) => {
       props.setScore(() => props.score + 1);
       const shuffled = shuffle(props.pokemons);
       props.setPokemons(shuffled);
+    } else {
       props.setScore(0);
+      props.setSeen({});
     }
   };
 

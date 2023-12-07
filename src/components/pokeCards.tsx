@@ -2,7 +2,7 @@ import PokeCard from "./pokeCard";
 import { Pokemon } from "../pokeInterface";
 import React from "react";
 
-interface CardsProps {
+interface PokeCardsProps {
   pokemons: Pokemon[];
   score: number;
   setSeen: React.Dispatch<React.SetStateAction<object>>;
@@ -11,7 +11,7 @@ interface CardsProps {
   seen: Record<string, boolean>;
 }
 // Render pokemons on the pokemons array
-const PokeCards = (props: CardsProps) => {
+const PokeCards = (props: PokeCardsProps) => {
   return (
     <div className="poke-cards normal">
       {props.pokemons.map((poke) => (

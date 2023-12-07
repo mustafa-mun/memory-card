@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import PokeCards from "./components/cards";
+import PokeCards from "./components/pokeCards";
 import { Pokemon } from "./pokeInterface";
 import { getRandomPokemon } from "./getPokemon";
 
