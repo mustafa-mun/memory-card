@@ -2,6 +2,10 @@ const baseURL = "https://pokeapi.co/api/v2/pokemon/";
 import { Pokemon } from "./pokeInterface";
 import axios from "axios";
 
+export const shuffle = (array: Pokemon[]) => {
+  return array.sort(() => Math.random() - 0.5);
+};
+
 export const getRandomPokemon = async (): Promise<Pokemon> => {
   try {
     const res = await axios.get(
