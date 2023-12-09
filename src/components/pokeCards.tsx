@@ -7,6 +7,7 @@ interface PokeCardsProps {
   score: number;
   setSeen: React.Dispatch<React.SetStateAction<object>>;
   setScore: React.Dispatch<React.SetStateAction<number>>;
+  setNotification: React.Dispatch<React.SetStateAction<string>>;
   setPokemons: React.Dispatch<React.SetStateAction<Pokemon[]>>;
   seen: Record<string, boolean>;
   difficulty: string;
@@ -15,7 +16,9 @@ interface PokeCardsProps {
 const PokeCards = (props: PokeCardsProps) => {
   let className = "poke-cards ";
 
-  switch (props.difficulty) {
+  switch (
+    props.difficulty // Decide the classname based on difficulty
+  ) {
     case "easy":
       className += "easy";
       break;
@@ -43,6 +46,7 @@ const PokeCards = (props: PokeCardsProps) => {
           setScore={props.setScore}
           score={props.score}
           setPokemons={props.setPokemons}
+          setNotification={props.setNotification}
         ></PokeCard>
       ))}
     </div>

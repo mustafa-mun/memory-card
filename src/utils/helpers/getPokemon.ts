@@ -1,5 +1,5 @@
 const baseURL = "https://pokeapi.co/api/v2/pokemon/";
-import { Pokemon } from "./pokeInterface";
+import { Pokemon } from "../../pokeInterface";
 import axios from "axios";
 
 export const shuffle = (array: Pokemon[]) => {
