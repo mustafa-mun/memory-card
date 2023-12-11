@@ -31,6 +31,12 @@ const PokeCard = (props: PokeProps) => {
       props.setPokemons(shuffled);
     } else {
       // Clicked pokemon is seen before, player lost the game
+      const unclickeds = props.pokemons.filter(
+        // Unclicked pokemons
+        (pokemon) => !props.seen[pokemon.id]
+      );
+      console.log(unclickeds);
+
       props.setNotification("YOU LOST! START AGAIN");
       setTimeout(() => {
         props.setNotification("");
